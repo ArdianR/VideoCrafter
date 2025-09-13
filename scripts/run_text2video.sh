@@ -8,7 +8,7 @@ res_dir="results"
 
 python3 scripts/evaluation/inference.py \
   --seed 123 \
-  --mode 'base' \
+  --mode base \
   --ckpt_path $ckpt \
   --config $config \
   --savedir $res_dir/$name \
@@ -17,9 +17,8 @@ python3 scripts/evaluation/inference.py \
   --height 320 \
   --width 512 \
   --unconditional_guidance_scale 12.0 \
-  --ddim_steps 25 \            # <— dikurangi supaya lebih cepat
+  --ddim_steps 25 \
   --ddim_eta 1.0 \
   --prompt_file $prompt_file \
   --fps 28 \
-  --n_frames 16               # <— tambahkan jumlah frame (opsi ini
-                              #    ada di inference.py, pastikan cocok)
+  --frames 16
